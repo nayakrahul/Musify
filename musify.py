@@ -64,18 +64,29 @@ def get_download_link(song_url):
 			return download_url
 	return
 
-def search_song(search_term):
-	search_term = search_term + " mp3 download mr jatt"
+def google_search(search_term, keyword):
+	search_term = search_term + keyword[0]
 	song_url = ''
 	for url in search(search_term, lang='en', stop=1):
 		components = parse_url(url)
-		if components[0] == 'mr-jatt.com' and components[1].find('download') != -1:
+		if components[0] == keyword[1] and components[1].find(keyword[2]) != -1:
 			song_url = url
 			return song_url
-	global flag
-	flag = 1
-	sys.stdout.write("\tFailed !!\n")
-	sys.exit() 
+	return None
+	
+
+def search_song(search_term):
+	song_url_jatt = google_search(search_term, [" mp3 download mr jatt", "mr-jatt.com", "download"])
+	song_url_pagal = google_search(search_term, [" mp3 download pagalworld", "pagalworld.co", "filedownload"])
+	if song_url_jatt:
+		return song_url_jatt
+	elif song_url_pagal:
+		return song_url_pagal
+	else:
+		global flag
+		flag = 1
+		sys.stdout.write("\tFailed !!\n")
+		sys.exit() 
 
 
 def start(search_term):
