@@ -1,5 +1,5 @@
 # Musify
-Download songs and listen to it by using this tool. It searches the given song in [mr-jatt.com](http://mr-jatt.com) and downloads from it.
+Download songs and listen to it by using this tool. It searches the given song in some websites and downloads from it.
 
 Command to run:
 ```python musify.py "song-name"```
