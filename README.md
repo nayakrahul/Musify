@@ -12,3 +12,7 @@ To make it a cli command, `setup.sh` can be used.
 `pip install bs4`
 
 `pip install clint`
+
+`brew install sox` for Mac OS
+
+`apt-get install sox` for Linux
