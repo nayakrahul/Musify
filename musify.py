@@ -61,7 +61,8 @@ def get_download_link(song_url, keyword):
 	for link in soup.find_all('a', **kwargs):
 		if link.find(keyword) != -1:
 			download_url = link.get('href')
-			return download_url
+			if download_url.split('.')[-1] == 'mp3':
+				return download_url
 	return
 
 def google_search(search_term, keyword):
@@ -77,11 +78,11 @@ def google_search(search_term, keyword):
 
 def search_song(search_term):
 	song_url_jatt = google_search(search_term, [" mp3 download mr jatt", "mr-jatt.com", "download"])
-	song_url_pagal = google_search(search_term, [" mp3 download pagalworld", "pagalworld.co", "filedownload"])
-	if song_url_jatt:
-		return song_url_jatt, "Download in 128 kbps"
+	song_url_pagal = google_search(search_term, [" mp3 download pagalworld", "pagalworld.me", "filedownload"])
 	if song_url_pagal:
 		return song_url_pagal, "[ Download File ]"
+	if song_url_jatt:
+		return song_url_jatt, "Download in 128 kbps"
 	else:
 		global flag
 		flag = 1
