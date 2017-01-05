@@ -96,7 +96,6 @@ def search_song(search_term):
 
 def start(search_term):
 	song_url, keyword = search_song(search_term)
-	print song_url
 	download_url = get_download_link(song_url, keyword)
 	file_path, file_name = download_song(download_url)
 	sys.stdout.write(file_name + " saved to Music !!\n")
