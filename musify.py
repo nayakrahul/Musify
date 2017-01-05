@@ -54,10 +54,12 @@ def download_song(download_url):
 	return file_path, file_name
 
 def get_download_link(song_url, keyword):
-	response = urllib2.urlopen(song_url)
+	hdr = {'User-Agent': 'Mozilla/5.0'}
+	req = urllib2.Request(song_url,headers=hdr)
+	response = urllib2.urlopen(req)
 	soup = BeautifulSoup(response,  "lxml")
 	# print soup.prettify()
-	kwargs={'class':'touch'}
+	kwargs={'class':['touch','lk']}
 	for link in soup.find_all('a', **kwargs):
 		if link.find(keyword) != -1:
 			download_url = link.get('href')
@@ -78,11 +80,14 @@ def google_search(search_term, keyword):
 
 def search_song(search_term):
 	song_url_jatt = google_search(search_term, [" mp3 download mr jatt", "mr-jatt.com", "download"])
+	song_url_mp3mad = google_search(search_term, [" mp3 download mp3mad", "mp3mad.com", "download"])
 	song_url_pagal = google_search(search_term, [" mp3 download pagalworld", "pagalworld.me", "filedownload"])
-	if song_url_pagal:
-		return song_url_pagal, "[ Download File ]"
 	if song_url_jatt:
 		return song_url_jatt, "Download in 128 kbps"
+	if song_url_mp3mad:
+		return song_url_mp3mad, "Download In High Quality"
+	if song_url_pagal:
+		return song_url_pagal, "[ Download File ]"
 	else:
 		global flag
 		flag = 1
