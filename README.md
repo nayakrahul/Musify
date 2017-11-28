@@ -2,7 +2,7 @@
 Download songs and listen to it by using this tool. It searches the given song in some websites and downloads from it and plays it.
 
 Command to run:
-```python musify.py "song-name"```
+```python musify.py "<song-name>"```
 
 To make it a cli command, `setup.sh` can be used.
 
