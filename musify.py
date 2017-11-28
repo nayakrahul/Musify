@@ -91,10 +91,11 @@ def search_song(search_term):
             " mp3 download mp3mad", "mp3mad.com", "download"])
     song_url_pagal = google_search(
         search_term, [
-            " mp3 download pagalworld", "pagalworld.me", "filedownload"])
+            " mp3 download pagalworld", "pagalworld.la", "filedownload"])
     song_url_jatt = google_search(
         search_term, [
             " mp3 download mr jatt", "mr-jatt.com", "download"])
+    
     if song_url_mp3mad:
         return song_url_mp3mad, "Download In High Quality"
     if song_url_pagal:
