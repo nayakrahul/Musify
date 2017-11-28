@@ -6,10 +6,10 @@ Command to run:
 
 To make it a cli command, `setup.sh` can be used.
 
-#Dependencies
+# Dependencies
 ```pip install - r requirements.txt```
 
-#Music player in terminal:
+# Music player in terminal:
 `brew install sox` for Mac OS
 
 `apt-get install sox` for Linux
