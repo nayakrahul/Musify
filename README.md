@@ -7,12 +7,9 @@ Command to run:
 To make it a cli command, `setup.sh` can be used.
 
 #Dependencies
-`pip install google`
+```pip install - r requirements.txt```
 
-`pip install bs4`
-
-`pip install clint`
-
+#Music player in terminal:
 `brew install sox` for Mac OS
 
 `apt-get install sox` for Linux
