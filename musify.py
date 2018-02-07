@@ -78,6 +78,7 @@ def google_search(search_term, keyword):
     song_url = ''
     for url in search(search_term, lang='en', stop=1):
         components = parse_url(url)
+        print(url)
         if components[0] == keyword[1] and components[1].find(
                 keyword[2]) != -1:
             song_url = url
@@ -92,7 +93,7 @@ def search_song(search_term):
     song_url_mp3mad = None
     song_url_pagal = google_search(
         search_term, [
-            " mp3 download pagalworld", "pagalworld.info", ""])
+            " mp3 download pagalworld", "pagalworld.info", "kbps"])
     # song_url_pagal = None
     # song_url_jatt = google_search(
     #     search_term, [
