@@ -4,7 +4,7 @@ Download songs and listen to it by using this tool. It searches the given song i
 Command to run:
 ```python musify.py "<song-name>"```
 
-To make it a cli command, `setup.sh` can be used.
+To make it a cli command, `sudo setup.sh` can be used.
 
 ### Dependencies
 ```pip install - r requirements.txt```
