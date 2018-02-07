@@ -78,7 +78,7 @@ def google_search(search_term, keyword):
     song_url = ''
     for url in search(search_term, lang='en', stop=1):
         components = parse_url(url)
-        print(url)
+        # print(url)
         if components[0] == keyword[1] and components[1].find(
                 keyword[2]) != -1:
             song_url = url
