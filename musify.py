@@ -1,4 +1,4 @@
-from google import search
+from googlesearch import search
 from threading import Thread
 from bs4 import BeautifulSoup
 from clint.textui import progress
@@ -86,15 +86,18 @@ def google_search(search_term, keyword):
 
 
 def search_song(search_term):
-    song_url_mp3mad = google_search(
-        search_term, [
-            " mp3 download mp3mad", "mp3mad.com", "download"])
+    # song_url_mp3mad = google_search(
+    #     search_term, [
+    #         " mp3 download mp3mad", "mp3mad.site", "download"])
+    song_url_mp3mad = None
     song_url_pagal = google_search(
         search_term, [
-            " mp3 download pagalworld", "pagalworld.la", "filedownload"])
-    song_url_jatt = google_search(
-        search_term, [
-            " mp3 download mr jatt", "mr-jatt.com", "download"])
+            " mp3 download pagalworld", "pagalworld.info", ""])
+    # song_url_pagal = None
+    # song_url_jatt = google_search(
+    #     search_term, [
+    #         " mp3 download mr jatt", "mr-jatt.com", "download"])
+    song_url_jatt = None
     
     if song_url_mp3mad:
         return song_url_mp3mad, "Download In High Quality"
@@ -124,4 +127,4 @@ if __name__ == '__main__':
         t2 = Thread(target=start, args=(sys.argv[1],))
         t2.start()
     except BaseException:
-        print "Error: unable to start thread"
+        print("Error: unable to start thread")
