@@ -14,7 +14,7 @@ Command to run:
 To make it a cli command, `sudo setup.sh` can be used.
 
 ### Dependencies
-```pip install - r requirements.txt```
+```pip install -r requirements.txt```
 
 ### Music player in terminal:
 `brew install sox` for Mac OS
