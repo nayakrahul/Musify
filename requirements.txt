@@ -6,6 +6,6 @@ chardet==3.0.4
 clint==0.5.1
 google==1.9.3
 idna==2.6
-lxml==4.1.1
+lxml==4.6.2
 requests==2.18.4
 urllib3==1.22
